@@ -35,8 +35,4 @@ public function it_returns_performance_score_on_successful_response()
     );
 }
 
-
-
-
-
 }

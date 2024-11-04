@@ -16,7 +16,6 @@ class GoogleAuthServiceTest extends TestCase
     public function test_handle_google_user_with_valid_gmail()
     {
         $service = new GoogleAuthService();
-        
         $googleUser = Mockery::mock(SocialiteUser::class);
         $googleUser->shouldReceive('getEmail')->andReturn('test@gmail.com');
         $googleUser->shouldReceive('getId')->andReturn('google-id');
