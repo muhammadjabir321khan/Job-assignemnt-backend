@@ -16,7 +16,7 @@ class PerformanceController extends Controller
         $url = $request->input('url');
         $response = Http::retry(3, 100)->get("https://www.googleapis.com/pagespeedonline/v5/runPagespeed", [
             'url' => $url,
-            'strategy' => strtolower( $request->input('platform')),
+            'type' => strtolower( $request->input('platform')),
         ]);
         if ($response->successful()) {
             $data = $response->json();
